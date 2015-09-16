@@ -506,6 +506,10 @@ body {
   .thumbnail img {
     width: 100% !important;
   }
+  .movie-thumbs .movie-thumbnail h5 a {
+    color: #fff;
+  }
+  .movie-thumbs .movie-thumbnail h5.movie-title a:hover {color:#008751;}
   .popover {
     color: #000;
     border-radius: 0;
@@ -524,9 +528,7 @@ body {
     margin-bottom: 0;
   }
   .popover-content ul li a .fui-star-2 { color: #95A5A6;}
-  .popover-content ul li a:hover .fui-star-2 {
-    color: #008751;
-  }
+  .popover-content ul li a:hover .fui-star-2 {color: #008751;}
   .popover-content ul li {
     color: #95A5A6;
   }
@@ -856,7 +858,7 @@ pre {
   margin-bottom: 5px;
   line-height: 1.72222;
   background-color: #fff;
-  border: 3px solid #16a085;
+  border: 3px solid #008751;
   border-radius: 0px;
   -webkit-transition: border .25s ease-in-out;
           transition: border .25s ease-in-out;
