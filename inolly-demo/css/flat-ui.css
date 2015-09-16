@@ -382,6 +382,15 @@ body {
   .p0-top {padding-top: 0 !important;}
   .p0-down {padding-bottom: 0 !important;}
 
+  .m0-left {margin-left: 0 !important;}
+  .m0-right {margin-right: 0 !important;}
+  .m0-top {margin-top: 0 !important;}
+  .m0-bttm {margin-bottom: 0 !important;}
+
+  .btn {
+    border-radius: 0 !important;
+  }
+
   .bgc-body {background-color: #000;}
   .ad-bar, .logo {
     padding: 7px;
@@ -392,6 +401,11 @@ body {
   .header-top-bar {
     min-height: 100px;
     margin-bottom: 68px;
+  }
+  .navbar-brand p {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
   }
   .navbar-transparent {
     background-color: transparent;
@@ -437,6 +451,9 @@ body {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .caption p {
     font-size: 12px;
@@ -484,6 +501,47 @@ body {
   }
   .main-content .movie-thumbs div {
     margin-bottom: 20px;
+  }
+  .thumbnail {padding: 0!important;}
+  .thumbnail img {
+    width: 100% !important;
+  }
+  .popover {
+    color: #000;
+    border-radius: 0;
+  }
+  .popover-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #008751;
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+  .popover-content p {
+    font-size: 14px;
+    color: #222;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  .popover-content ul li a .fui-star-2 { color: #95A5A6;}
+  .popover-content ul li a:hover .fui-star-2 {
+    color: #008751;
+  }
+  .popover-content ul li {
+    color: #95A5A6;
+  }
+  /*.caption p.casts span {color: #fff;}*/
+  .popover-content p.casts span/*, .caption p.casts span*/ {
+    border: 1px solid rgba(0, 135, 81, 0.36);
+    padding: 2px;
+    margin: 1px;
+  }
+  .popover-content p.casts span {color: #008751;}
+  .popover-content p.director-name {color: #95A5A6;margin-bottom: 3px;}
+  .popover-content p.movie-desc {color: #7F8C8D;margin-bottom: 10px;
+  }
+  .ad-sidebar div {
+    margin-bottom: 10px;
   }
 
   @media (min-width: 1200px) {
@@ -914,7 +972,7 @@ fieldset[disabled] .btn-default.active {
   }
 .btn-primary {
   color: #fff;
-  background-color: #1abc9c;
+  background-color: #008751;
   }
 .btn-primary:hover,
 .btn-primary.hover,
@@ -923,8 +981,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #48c9b0;
-  border-color: #48c9b0;
+  background-color: transparent;
+  border: 1px solid #008751;
   }
 .btn-primary:active,
 .btn-primary.active,
