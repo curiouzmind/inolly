@@ -448,12 +448,42 @@ body {
     padding: 20px 0;
     margin-bottom: 20px;
   }
-  .grow { transition: all .5s ease-in-out; }
-  .grow:hover { transform: scale(1.5); z-index: 999; }
+  .grow { 
+    transition: all .5s ease-in-out; 
+    -moz-transition: all .5s ease-in-out; 
+    -webkit-transition: all .5s ease-in-out; 
+    -ms-transition: all .5s ease-in-out; 
+  }
+  .grow:hover { 
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    z-index: 999;
+    overflow: hidden;
+  }
   .fade50 {opacity: 0.5; background-color: #000;}
   footer p.credits {
     font-size: 10px;
     color: rgba(153, 153, 153, 0.81);
+  }
+  .slider-carousel {
+    width: 100%;
+    min-height: 400px;
+    margin: 20px 0;
+    padding: 20px;
+    border: solid 1px #008751; 
+    overflow: hidden;
+  }
+  #carousel img {
+    display: block;
+    float: left;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .main-content .movie-thumbs div {
+    margin-bottom: 20px;
   }
 
   @media (min-width: 1200px) {

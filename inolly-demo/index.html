@@ -90,12 +90,24 @@
                       </nav>
                 </div>
                 <!-- CAROUSEL -->
-                <div class="slider-carousel"></div>
+                <div class="slider-carousel">
+                    <div id="wrapper">
+                      <div id="carousel">
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
+                      </div>
+                    </div>
+                </div>
                 <!-- MAIN CONTENT -->
                 <div class="main-content">
                   <h1>WHAT DO YOU WANT TO WATCH TODAY?</h1>
 
-                  <div class="row">
+                  <div class="row movie-thumbs">
                     <div class="col-xs-6 col-md-4"><a class="thumbnail" href="#"><img class="grow" data-src="holder.js/100%x180" alt="..."></a>
                         <div class="caption">
                           <h5>Last Flight To Abuja</h5>
@@ -152,7 +164,7 @@
         </div>
         <footer>
           <div class="footer">
-            <p class="credits">&copy; iNolly, 2015.</p>
+            <p class="credits">&copy; Copyright 2015, iNolly. All rights reserved.</p>
           </div>
         </footer>
     </div>
@@ -165,9 +177,81 @@
     <script src="js/vendor/video.js"></script>
     <script src="js/vendor/application.js"></script>
     <script src="js/flat-ui.min.js"></script>
+    <script src="plugins/jquery.carouFredSel.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             // $("img").addClass('grow')
+        });
+        // 3D Carousel Slider
+        $(function() {
+          var _center = {
+            width: 500,
+            height: 400,
+            marginLeft: -10,
+            marginTop: 0,
+            marginRight: 0
+          };
+          var _left = {
+            width: 300,
+            height: 200,
+            marginLeft: 0,
+            marginTop: 150,
+            marginRight: -150
+          };
+          var _right = {
+            width: 300,
+            height: 200,
+            marginLeft: -150,
+            marginTop: 150,
+            marginRight: 0
+          };
+          var _outLeft = {
+            width: 150,
+            height: 100,
+            marginLeft: 150,
+            marginTop: 200,
+            marginRight: -200
+          };
+          var _outRight = {
+            width: 150,
+            height: 100,
+            marginLeft: -200,
+            marginTop: 200,
+            marginRight: 50
+          };
+          $('#carousel').carouFredSel({
+            width: '100%',
+            height: 400,
+            align: 'left',
+            infinite: false,
+            items: {
+              visible: 3,
+              width: 100
+            },
+            scroll: {
+              items: 1,
+              pauseOnHover: true,
+              duration: 400,
+              onBefore: function( data ) {
+                data.items.old.eq( 0 ).animate(_outLeft);
+                data.items.visible.eq( 0 ).animate(_left);
+                data.items.visible.eq( 1 ).animate(_center);
+                data.items.visible.eq( 2 ).animate(_right).css({ zIndex: 1 });
+                data.items.visible.eq( 2 ).next().css(_outRight).css({ zIndex: 0 });
+
+                setTimeout(function() {
+                  data.items.old.eq( 0 ).css({ zIndex: 1 });
+                  data.items.visible.eq( 0 ).css({ zIndex: 2 });
+                  data.items.visible.eq( 1 ).css({ zIndex: 3 });
+                  data.items.visible.eq( 2 ).css({ zIndex: 2 });
+                }, 400);
+              }
+            }
+          });
+          $('#carousel').children().eq( 0 ).css(_left).css({ zIndex: 2 });
+          $('#carousel').children().eq( 1 ).css(_center).css({ zIndex: 3 });
+          $('#carousel').children().eq( 2 ).css(_right).css({ zIndex: 2 });
+          $('#carousel').children().eq( 3 ).css(_outRight).css({ zIndex: 1 });
         });
     </script>
   </body>
