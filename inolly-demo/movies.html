@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>iNolly | Home</title>
+    <title>Movies | iNolly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -10,6 +10,10 @@
 
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
+
+    <!-- plugins -->
+    <link href="plugins/animate.css" rel="stylesheet">
+     <link rel="stylesheet" href="fonts/font-awesome-4.4.0/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="img/favicon.ico">
 
@@ -23,18 +27,18 @@
     <div class="container bgc-body">
         <!-- HEADER TOP BAR -->
         <div class="header-top-bar">
-          <div class="logo p0-left"><a class="navbar-brand p0-left" href="">
-            <img src="img/placeholders/logo.png">
-            <p>The Home of Nollywood</p></a>
+          <div class="logo p0-left hidden-xs hidden-sm"><a class="navbar-brand p0-left" href="">
+            <img class="img-responsive" src="img/placeholders/logo.png">
+            <p class="hidden-xs hidden-sm">The Home of Nollywood</p></a>
           </div>
           <div class="ad-bar pull-right">
-            <img src="img/placeholders/header-ad.png">
+            <a href="index.html"><img class="img-responsive" src="img/placeholders/header-ad.png"></a>
           </div>
         </div>
         <!-- CONTENT -->
         <div class="content">
           <div class="row">
-            <!-- MAIN CONTENT >> 3D CAROUSEL, THUMBNAILS, POPOVERS -->
+            <!-- MAIN CONTENT >> BREADCRUMBS, THUMBNAILS, POPOVERS -->
             <div class="col-md-10">
                 <!-- MENU NAVIGATION -->
                 <div class="header-menu">
@@ -44,31 +48,17 @@
                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
                           </button>
+                          <a class="navbar-brand p0-left hidden-lg hidden-md" href=""><img class="img-responsive" src="img/placeholders/logo.png">
+                              <p class="hidden-xs hidden-sm">The Home of Nollywood</p></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                           <ul class="nav navbar-nav">
-                            <li><a href="#">HOME</a></li>
-                            <li class="active dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">A-Z <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Option</a></li>
-                                <li><a href="#">Option</a></li>
-                                <li><a href="#">Option</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Option</a></li>
-                              </ul>
-                            </li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li class="active"><a href="#">MOVIES (A - Z) <span class=""></span></a></li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORIES <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Option</a></li>
-                                <li><a href="#">Option</a></li>
-                                <li><a href="#">Option</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Option</a></li>
-                              </ul>
+                              <a href="#">categories <span class=""></span></a>
                             </li>
                            </ul>
                           <form class="navbar-form navbar-left form-inline" action="#" role="search">
@@ -91,24 +81,87 @@
                         </div><!-- /.navbar-collapse -->
                       </nav>
                 </div>
-                <!-- CAROUSEL -->
-                <div class="slider-carousel">
-                    <div id="wrapper">
-                      <div id="carousel">
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                        <img src="img/placeholders/movie-poster.png" width="600" height="400" />            
-                      </div>
-                    </div>
+                <!-- BREADCRUMB -->
+                <div class="breadcrumb-banner">
+                  <div class="banner-img">
+                      <h1>Browse Movies</h1>
+                  </div>
+               
+                  <ol class="breadcrumb">
+                      <li><a href="#"><i class="fui-home"></i></a></li>
+                      <li class="active"><i class="fui-video"></i> Movies</li>
+                  </ol>
                 </div>
                 <!-- MAIN CONTENT -->
                 <div class="main-content">
-                  <h1>WHAT DO YOU WANT TO WATCH TODAY?</h1>
-
+                  <!-- PAGE HEADING -->
+                  <!-- SORTING BAR -->
+                  <div class="row movies-filters">
+                    <div class="col-md-12">
+                      <div class="movies-filters-box">
+                        <p class="m5-bttm"><a href="#"><i class="fa fa-filter"></i> FILTERS <span class="pull-right fui-triangle-down"></span></a></p>
+                        <ul class="list-inline filters-content animated fadeIn m5-bttm">
+                          <li>
+                              <select data-toggle="select" class="form-control select select-default mrs mbm">
+                               <optgroup label="Genres">
+                                <option class="" value="0">All</option>
+                                <option value="1">Drama</option>
+                                <option value="2">Comedy</option>
+                                <option value="3">Action</option>
+                                <option value="3">Romance</option>
+                               </optgroup>
+                              </select>
+                          </li>
+                          <li>
+                              <select data-toggle="select" class="form-control select select-default mrs mbm">
+                               <optgroup label="Sorting">
+                                <option class="" value="0">Default</option>
+                                <option value="1">Ascending</option>
+                                <option value="2">Descending</option>
+                                <option value="3">Random</option>
+                               </optgroup>
+                              </select>
+                          </li>
+                          <li>
+                              <select data-toggle="select" class="form-control select select-default mrs mbm">
+                               <optgroup label="Languages">
+                                <option class="" value="0">All</option>
+                                <option value="1">English</option>
+                                <option value="2">Yoruba</option>
+                                <option value="3">Igbo</option>
+                                <option value="3">Hause</option>
+                                <option value="3">Others</option>
+                               </optgroup>
+                              </select>
+                          </li>
+                          <li>
+                              <select data-toggle="select" class="form-control select select-default mrs mbm">
+                               <optgroup label="Star ratings">
+                                <option class="" value="0">1 Star</option>
+                                <option value="1">2 Stars</option>
+                                <option value="2">3 Stars</option>
+                                <option value="3">4 Stars</option>
+                                <option value="4">5 Stars</option>
+                               </optgroup>
+                              </select>
+                          </li>
+                          <li>
+                              <select data-toggle="select" name="searchfield" class="form-control select select-default mrs mbm">
+                               <optgroup label="Actors / Actresses">
+                                <option class="disabled" value="0">All</option>                                
+                                <option value="1">Ini Edo</option>
+                                <option value="2">Omotola Jolade</option>
+                                <option value="3">Nadia Buari</option>
+                                <option value="4">Ramsey Nouah</option>
+                                <option value="5">Bimbo Manuel</option>
+                               </optgroup>
+                              </select>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- MOVIE THUMBS -->
                   <div class="row movie-thumbs">
                     <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="<a href='#'>Last Flight To Abuja</a>"
                       data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
@@ -154,7 +207,7 @@
                     </div>
                     <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
                       data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
-                    <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
                         <div class="caption">
                           <h5>Last Flight To Abuja</h5>
                           <p>Director's Name</p>
@@ -168,7 +221,7 @@
                     </div>
                     <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
                       data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
-                    <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
                         <div class="caption">
                           <h5>Osuofia in London</h5>
                           <p>Director's Name</p>
@@ -182,7 +235,49 @@
                     </div>
                     <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
                       data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
-                    <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                        <div class="caption">
+                          <h5>Dark Waters</h5>
+                          <p>Director's Name</p>
+                          <p class="casts"><span>Lead Roles Names</span></p>
+                          <ul class="list-inline">
+                            <li><i class="fui-clip"></i> Genre</li>
+                            <li><i class="fui-time"></i> 11 mins</li>
+                            <li><i class="fui-calendar"></i> 2009</li>
+                          </ul>
+                        </div>
+                    </div>
+                                        <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
+                      data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                        <div class="caption">
+                          <h5>Last Flight To Abuja</h5>
+                          <p>Director's Name</p>
+                          <p>Lead Roles Names</p>
+                          <ul class="list-inline">
+                            <li><i class="fui-clip"></i> Genre</li>
+                            <li><i class="fui-time"></i> 11 mins</li>
+                            <li><i class="fui-calendar"></i> 2009</li>
+                          </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
+                      data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
+                        <div class="caption">
+                          <h5>Osuofia in London</h5>
+                          <p>Director's Name</p>
+                          <p>Lead Roles Names</p>
+                          <ul class="list-inline">
+                            <li><i class="fui-clip"></i> Genre</li>
+                            <li><i class="fui-time"></i> 11 mins</li>
+                            <li><i class="fui-calendar"></i> 2009</li>
+                          </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4" data-popover="true" data-html=true title="Osuofia in London"
+                      data-content="<ul class='list-inline m0-bttm'><li><i class='fui-clip'></i> Genre</li><li><i class='fui-time'></i> 11 mins</li><li><i class='fui-calendar'></i> 2009</li></ul><ul class='list-inline'><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li><li><a href='#'><i class='fui-star-2'></i></a></li></ul><p class='movie-desc'>When a wealthy older chief proposes to an attractive top model his only daughter is incensed labelling his wife a golddigger ...</p><p class='director-name'><span>Prod. by: </span> Jeta Amata</p><p class='casts'><span>Prince Jide Kosoko</span> <span>Keira Hewatch</span></p>">
+                      <a class="thumbnail" href="#"><img src="img/placeholders/movie-thumb.png" alt="..."></a>
                         <div class="caption">
                           <h5>Dark Waters</h5>
                           <p>Director's Name</p>
@@ -195,8 +290,9 @@
                         </div>
                     </div>
                   </div>
+                  <!-- pagination / infinite scroll -->
                   <div class="btn-more text-center">
-                    <a href="" class="btn btn-primary">View more</a>
+                    <a href="" class="btn btn-primary">Load more</a>
                   </div>
                 </div>
             </div>
@@ -257,79 +353,18 @@
             $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 50}});
         });
         $(document).ready(function() {
-            // $("img").addClass('grow')
-        });
-        // 3D Carousel Slider
-        $(function() {
-          var _center = {
-            width: 500,
-            height: 400,
-            marginLeft: -10,
-            marginTop: 0,
-            marginRight: 0
-          };
-          var _left = {
-            width: 300,
-            height: 200,
-            marginLeft: 0,
-            marginTop: 150,
-            marginRight: -150
-          };
-          var _right = {
-            width: 300,
-            height: 200,
-            marginLeft: -150,
-            marginTop: 150,
-            marginRight: 0
-          };
-          var _outLeft = {
-            width: 150,
-            height: 100,
-            marginLeft: 150,
-            marginTop: 200,
-            marginRight: -200
-          };
-          var _outRight = {
-            width: 150,
-            height: 100,
-            marginLeft: -200,
-            marginTop: 200,
-            marginRight: 50
-          };
-          $('#carousel').carouFredSel({
-            width: '100%',
-            height: 400,
-            align: 'left',
-            infinite: false,
-            items: {
-              visible: 3,
-              width: 100
-            },
-            scroll: {
-              items: 1,
-              pauseOnHover: true,
-              duration: 400,
-              onBefore: function( data ) {
-                data.items.old.eq( 0 ).animate(_outLeft);
-                data.items.visible.eq( 0 ).animate(_left);
-                data.items.visible.eq( 1 ).animate(_center);
-                data.items.visible.eq( 2 ).animate(_right).css({ zIndex: 1 });
-                data.items.visible.eq( 2 ).next().css(_outRight).css({ zIndex: 0 });
-
-                setTimeout(function() {
-                  data.items.old.eq( 0 ).css({ zIndex: 1 });
-                  data.items.visible.eq( 0 ).css({ zIndex: 2 });
-                  data.items.visible.eq( 1 ).css({ zIndex: 3 });
-                  data.items.visible.eq( 2 ).css({ zIndex: 2 });
-                }, 400);
-              }
-            }
+          $(".movies-filters a").click(function() {
+              $("ul.filters-content").slideToggle();
           });
-          $('#carousel').children().eq( 0 ).css(_left).css({ zIndex: 2 });
-          $('#carousel').children().eq( 1 ).css(_center).css({ zIndex: 3 });
-          $('#carousel').children().eq( 2 ).css(_right).css({ zIndex: 2 });
-          $('#carousel').children().eq( 3 ).css(_outRight).css({ zIndex: 1 });
         });
+        // Select2 plugin script
+        $(document).ready(function(){
+          $('select[name="inverse-dropdown"], select[name="inverse-dropdown-optgroup"], select[name="inverse-dropdown-disabled"]').select2({dropdownCssClass: 'select-inverse-dropdown'});
+
+          $('select[name="searchfield"]').select2({dropdownCssClass: 'show-select-search'});
+          $('select[name="inverse-dropdown-searchfield"]').select2({dropdownCssClass: 'select-inverse-dropdown show-select-search'});
+        });
+        
     </script>
   </body>
 </html>
